@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+             
+    <bean id="emailService" class="com.example.events.EmailService">
+    	<property name="blockedList">
+    	<list>
+    		<value>prachisv04@gmail.com</value>
+    		<value>prachisv02@gmail.com</value>
+    		<value>prachisv03@gmail.com</value>
+    		<value>prachisv01@gmail.com</value>
+    	</list>
+    	</property>
+    </bean>
+    
+    <bean id="blockedListNotifier" class="com.example.events.BlockedListNotifier">
+    <property name="notificationAddress" value="prachisvavhal@gmail.com"></property>
+    </bean>
+               
+   
+</beans>

@@ -1,0 +1,1 @@
+this is example of text file will be used to get from classpath resource

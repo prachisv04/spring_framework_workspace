@@ -1,0 +1,83 @@
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:37:17.981534700  
+Method Execution Started : void com.example.aspectj.StudentService.register(Student)
+Method Executed Successfully : register
+Method Ended  register
+Method Execution Started : List com.example.aspectj.StudentService.getStudents()
+Method Executed Successfully : getStudents
+Method Ended  getStudents
+Method Execution Started : void com.example.aspectj.StudentService.deleteStudent(int)
+Method Ended with exception : deleteStudent
+		Student with given id not found
+null
+Method Ended  deleteStudent
+Method Execution Started : void com.example.aspectj.StudentService.updateStudent(Student)
+Method Executed Successfully : updateStudent
+Method Ended  updateStudent
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:37:53.519037800  
+Method Execution Started : void com.example.aspectj.StudentService.register(Student)
+Method Executed Successfully : register
+Method Ended  register
+Method Execution Started : List com.example.aspectj.StudentService.getStudents()
+Method Executed Successfully : getStudents
+Method Ended  getStudents
+Method Execution Started : void com.example.aspectj.StudentService.deleteStudent(int)
+Method Ended with exception : deleteStudent
+		Student with given id not found
+null
+Method Ended  deleteStudent
+Method Execution Started : void com.example.aspectj.StudentService.updateStudent(Student)
+Method Executed Successfully : updateStudent
+Method Ended  updateStudent
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:38:48.957833900  
+Around Method Ended  getStudents
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:39:18.234292500  
+Around Method Ended  getStudents
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:40:31.015789200  
+Around Method Ended  getStudents
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:40:47.672714100  
+Around Method Ended  getStudents
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:41:28.870101800  
+Around Method Ended  getStudents
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:41:57.598255900  
+Around Method Ended  getStudents
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:45:28.269765300  
+Around Method Ended  getStudents
+Around Method Ended  getId
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:46:32.812577800  
+Around Method Ended  getStudents
+Around Method Ended  getId
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:47:08.764384900  
+Around Method Ended  getStudents
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:47:40.914289300  
+Around Method Ended  getStudents
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:48:21.826454200  
+Around Method Ended  getStudents
+ ------------------------------------------------------------------------------------------ 
+	2024-01-20T17:49:19.896601200  
+Method Execution Started : void com.example.aspectj.StudentService.register(Student)
+Method Executed Successfully : register
+Method Ended  register
+Method Execution Started : List com.example.aspectj.StudentService.getStudents()
+Method Executed Successfully : getStudents
+Method Ended  getStudents
+Method Execution Started : void com.example.aspectj.StudentService.deleteStudent(int)
+Method Ended with exception : deleteStudent
+		Student with given id not found
+null
+Method Ended  deleteStudent
+Method Execution Started : void com.example.aspectj.StudentService.updateStudent(Student)
+Method Executed Successfully : updateStudent
+Method Ended  updateStudent

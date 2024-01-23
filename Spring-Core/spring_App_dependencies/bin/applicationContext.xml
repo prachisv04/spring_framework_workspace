@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"    >
+	
+	<!-- Dependent : Address --> 
+	<bean name="addressBean" class="com.dependencies.entity.Address">
+		<property name="city" value="Nashik"></property>
+		<property name="zipcode" value="422001"></property>
+	</bean>
+	
+	
+	<!--dependent : Courses -->
+	<bean id="courseBean" class="com.dependencies.entity.Courses">
+		<property name="courses">
+			<map>
+				<entry key="JAVA" value="5"></entry>
+				<entry key="SQL" value="3"></entry>
+				<entry key="Spring" value="4"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	
+	<!-- Target: Student -->
+    <bean id="studentBean" class = "com.dependencies.entity.Student">
+	    <property name="rollno" value="1"></property>
+	    <property name="name" value="prachi"></property>
+	    <property name="address">
+	    	<idref bean="addressBean"></idref>
+	    </property>
+	    <property name="course" ref="courseBean"></property>
+    </bean>
+	
+
+</beans>
