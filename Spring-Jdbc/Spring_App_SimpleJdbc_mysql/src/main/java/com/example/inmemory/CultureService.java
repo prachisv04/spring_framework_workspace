@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class CultureService {
@@ -23,5 +22,9 @@ public class CultureService {
 	public void findAllCultures() {
 		List<Culture> cultures = repo.findAllCultures();
 		cultures.forEach(culture-> System.out.println(culture.toString()));
+	}
+	
+	public Culture getCultureByName(String origin) {
+		return repo.getCultureByName(origin);
 	}
 }

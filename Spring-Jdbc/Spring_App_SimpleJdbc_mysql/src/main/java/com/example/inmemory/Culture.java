@@ -48,8 +48,8 @@ public class Culture {
 	
 	@Override
 	public String toString() {
-		return "Culture [country=" + country + ", religion=" + religion + ", language=" + language + ", book=" + book
-				+ "]";
+		return "country{\n\tname=" + country + ",\n\treligion=" + religion + ",\n\tlanguage=" + language + ",\n\tbook=" + book
+				+ "\n}";
 	}
 
 	
