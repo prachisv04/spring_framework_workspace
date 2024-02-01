@@ -10,7 +10,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 @SpringBootApplication
 public class SpringAppJdbcInmemoryApplication implements CommandLineRunner{
-
 	 @Autowired
 	  private ExampleClient exampleClient;
 
@@ -27,16 +26,24 @@ public class SpringAppJdbcInmemoryApplication implements CommandLineRunner{
 	      exampleClient.run(template);
 	      
 	      Person person = new Person("Dana", "Whitley", "464 Yellow Drive");
-	      System.out.println("saving person: " + person);
 	      exampleClient.save(person);
 
 	      person = new Person("Robin", "Cash", "64 Logic Park");
-	      System.out.println("saving person: " + person);
-	      exampleClient.save(person);
-
+	      long id = exampleClient.saveWithKey(person);
+	      System.out.println("id:"+id);
+	      
 	      System.out.println("-- loading all --");
 	      List<Person> persons = exampleClient.loadAll();
-	      persons.forEach(System.out::println);
+	      persons.forEach(per->System.out.println(per.toString()));
+	      
+	      	//	      updating user with id 
+	      
+	      person = new Person("Robin", "Scherbatsky", "64 Logic Park");
+	      exampleClient.update(id, person);
+	      
+	      System.out.println("-- loading all --");
+	       persons = exampleClient.loadAll();
+	      persons.forEach(per->System.out.println(per.toString()));
 	  }
 
 }

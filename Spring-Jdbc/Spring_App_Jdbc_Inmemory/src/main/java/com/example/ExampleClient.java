@@ -21,10 +21,19 @@ public class ExampleClient{
 	     return repo.loadAll();
 	  }
 
+	  public void update(long id,Person person) {
+		  repo.updatePerson(id,person);
+	  }
+	  
 	public void run(JdbcTemplate jdbctemplate) {
 		jdbcTemplate = jdbctemplate;
 		 jdbcTemplate.execute("DROP TABLE customers IF EXISTS");
 		    jdbcTemplate.execute("CREATE TABLE Person(" +
-		        "id SERIAL, first_name VARCHAR(255), last_name VARCHAR(255),address VARCHAR(255))");
+		        "id SERIAL, firstName VARCHAR(255), lastName VARCHAR(255),address VARCHAR(255))");
 	  }
+
+	public long saveWithKey(Person person) {
+		
+		return repo.saveWIthKey(person);
+	}
 }
