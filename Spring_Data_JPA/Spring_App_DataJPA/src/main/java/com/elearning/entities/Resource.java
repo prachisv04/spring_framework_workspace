@@ -1,4 +1,4 @@
-package com.elearning.models.entities;
+package com.elearning.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,15 +13,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Course {
+public class Resource {
 
     @Id
     @GeneratedValue
     private Integer id;
-
-    private String title;
-
-    private String description;
-
+    private String name;
+    private int size;
 
 }

@@ -1,4 +1,4 @@
-package com.elearning.models.entities;
+package com.elearning.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

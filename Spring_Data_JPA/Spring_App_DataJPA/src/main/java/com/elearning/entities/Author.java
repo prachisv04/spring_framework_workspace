@@ -1,4 +1,4 @@
-package com.elearning.models.entities;
+package com.elearning.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

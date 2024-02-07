@@ -1,6 +1,6 @@
 package com.elearning.repositories;
 
-import com.elearning.models.entities.Lecture;
+import com.elearning.entities.Lecture;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
