@@ -10,4 +10,6 @@ class SpringAppDataJpaApplicationTests {
 	void contextLoads() {
 	}
 
+
+
 }
