@@ -2,21 +2,22 @@ package com.elearning.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.Check;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 //@Component
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Entity
-@Builder
+@SuperBuilder
 @Table(name = "author")
-public class Author {
+public class Author extends BaseEntity{
 
     @Id
     @GeneratedValue(

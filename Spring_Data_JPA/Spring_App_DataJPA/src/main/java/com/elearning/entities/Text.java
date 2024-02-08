@@ -1,17 +1,16 @@
-//package com.elearning.models.entities;
-//
-//import jakarta.persistence.Entity;
-//import lombok.AllArgsConstructor;
-//import lombok.Builder;
-//import lombok.Data;
-//import lombok.NoArgsConstructor;
-//
-//@Data
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Builder
-//@Entity
-//public class Text {
-//
-//    private String content;
-//}
+package com.elearning.entities;
+
+import jakarta.persistence.Entity;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
+@Data
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder
+@Entity
+public class Text extends Resource{
+
+    private String content;
+}

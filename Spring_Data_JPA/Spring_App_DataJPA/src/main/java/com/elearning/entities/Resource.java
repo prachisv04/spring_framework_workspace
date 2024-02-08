@@ -2,17 +2,19 @@ package com.elearning.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.GenericGenerator;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
 @ToString
 @Table(
         name = "resource"
 )
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Resource {
 
     @Id

@@ -1,18 +1,17 @@
-//package com.elearning.models.entities;
-//
-//import jakarta.persistence.Entity;
-//import lombok.AllArgsConstructor;
-//import lombok.Builder;
-//import lombok.Data;
-//import lombok.NoArgsConstructor;
-//import lombok.experimental.SuperBuilder;
-//
-//@Data
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Builder
-//@Entity
-//public class File {
-//    private String name;
-//    private String type;
-//}
+package com.elearning.entities;
+
+import jakarta.persistence.Entity;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
+@Data
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder
+@Entity
+public class File extends Resource{
+
+    private String name;
+    private String type;
+}

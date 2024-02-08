@@ -9,15 +9,16 @@ import org.w3c.dom.stylesheets.LinkStyle;
 import java.util.List;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
 @ToString
 @Table(
         name = "section"
 )
-public class Section {
+public class Section extends BaseEntity{
 
     @Id
     @GeneratedValue(

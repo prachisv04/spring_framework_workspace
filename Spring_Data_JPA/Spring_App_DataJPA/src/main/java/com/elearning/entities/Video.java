@@ -1,19 +1,18 @@
-//package com.elearning.models.entities;
-//
-//import jakarta.persistence.Entity;
-//import lombok.AllArgsConstructor;
-//import lombok.Builder;
-//import lombok.Data;
-//import lombok.NoArgsConstructor;
-//
-//@Data
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Builder
-//@Entity
-//public class Video {
-//
-//    private String url;
-//    private int length;
-//
-//}
+package com.elearning.entities;
+
+import jakarta.persistence.Entity;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
+@Data
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder
+@Entity
+public class Video extends Resource{
+
+    private String url;
+    private int length;
+
+}

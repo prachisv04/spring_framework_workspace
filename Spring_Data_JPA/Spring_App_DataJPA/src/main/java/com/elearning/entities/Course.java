@@ -1,21 +1,24 @@
 package com.elearning.entities;
 
+import com.fasterxml.jackson.databind.ser.Serializers;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.util.List;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
 @ToString
 @Table(
         name = "course"
 )
-public class Course {
+public class Course extends BaseEntity {
 
     @Id
     @GeneratedValue(
