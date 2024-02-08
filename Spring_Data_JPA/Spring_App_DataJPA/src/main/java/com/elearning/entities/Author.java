@@ -58,7 +58,8 @@ public class Author {
     private int age;
 
     @ManyToMany(
-            mappedBy = "authors"
+            mappedBy = "authors",
+            fetch = FetchType.EAGER
     )
     private List<Course> courses;
 

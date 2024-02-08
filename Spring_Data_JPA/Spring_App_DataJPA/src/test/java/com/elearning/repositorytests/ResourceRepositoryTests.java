@@ -1,9 +1,10 @@
 package com.elearning.repositorytests;
 
-import com.elearning.entities.Lecture;
 import com.elearning.entities.Resource;
 import com.elearning.repositories.ResourceRepository;
 import com.github.javafaker.Faker;
+import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -20,13 +22,25 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class ResourceRepositoryTests {
 
-    private ResourceRepository resourceRepository;
-    private Faker faker;
+    private  ResourceRepository resourceRepository;
+    private  Faker faker;
 
     @Autowired
-    ResourceRepositoryTests(ResourceRepository resourceRepository){
+    ResourceRepositoryTests(ResourceRepository resourceRepository,Faker faker){
         this.resourceRepository=resourceRepository;
-        faker = new Faker();
+        this.faker = new Faker();
+    }
+
+    @BeforeEach
+    public void init(){
+        System.out.println("Before All init() method called - ResourceRepositoryTests");
+        for(int i=0;i<5;i++){
+            Resource resource = Resource.builder()
+                    .name(faker.name().username())
+                    .size(faker.number().numberBetween(1,100))
+                    .build();
+            resourceRepository.save(resource);
+        }
     }
 
     @Test
@@ -40,5 +54,12 @@ public class ResourceRepositoryTests {
         Optional<Resource> res = resourceRepository.findById(resource.getId());
         assertThat(res).isPresent();
         assertThat(res.get()).isEqualTo(resource);
+    }
+
+    @Test
+    public void findAllAuthors(){
+        List<Resource> resourceList = resourceRepository.findAll();
+        long total= resourceRepository.count();
+        assertThat(resourceList.size()).isEqualTo(total);
     }
 }

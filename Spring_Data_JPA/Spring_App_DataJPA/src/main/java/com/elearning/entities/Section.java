@@ -1,10 +1,7 @@
 package com.elearning.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.GenericGenerator;
 import org.w3c.dom.stylesheets.LinkStyle;
@@ -16,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
+@ToString
 @Table(
         name = "section"
 )
@@ -46,14 +44,17 @@ public class Section {
     )
     private int sectionOrder;
 
-    @ManyToOne
+    @ManyToOne(
+            fetch = FetchType.EAGER
+    )
     @JoinColumn(
             name = "course_id"
     )
     private Course course;
 
     @OneToMany(
-            mappedBy = "section"
+            mappedBy = "section",
+            fetch = FetchType.EAGER
     )
     private List<Lecture> lectures;
 
